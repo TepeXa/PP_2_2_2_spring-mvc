@@ -6,28 +6,15 @@
     <title></title>
 </head>
 <body>
-<table border="1">
-    <tr>
-        <th>No</th>
-        <th>Full Name</th>
-        <th>Email</th>
-    </tr>
-    <tr th:each="car, state : ${cars}"
-        class="row" th:classappend="${state.odd} ? 'odd-row' : 'even-row'">
-        <td th:utext="${state.count}">No</td>
-        <td th:utext="${car.getId()}">Full Name</td>
-        <td th:utext="${car.getPower}">Email</td>
-    </tr>
-</table>
 
-
-<div th:each="car:${cars}">
- <a th:href="@{/{id}(id=${car.getId()})}"
-th:text="${car.getName()+','+car.getPower()}">car</a>
+<div th:each="cars:${cars}">
+ <a th:href="@{/{id}(id=${cars.getId()})}"
+th:text="${cars.getName()+','+cars.getPower()+','+cars.getColor()}">car</a>
 </div>
 <br/>
 <hr/>
 <a href="/new">Create new car</a>
+
 
 
 </body>

@@ -14,8 +14,8 @@ public class carDAO {
         cars = new ArrayList<>();
         cars.add(new Car(++CAR_COUNT,"Audi", 249, "black"));
         cars.add(new Car(++CAR_COUNT,"Lada",77,"Baklazan"));
-        cars.add(new Car(++CAR_COUNT,"Anastasia", 31, "nastya@mail.ru"));
-        cars.add(new Car(++CAR_COUNT,"Matvei",2, "matvei@mail.ru"));
+        cars.add(new Car(++CAR_COUNT,"Mers", 200, "white"));
+        cars.add(new Car(++CAR_COUNT,"Scoda",180, "red"));
     }
 
     public List<Car> index(){
