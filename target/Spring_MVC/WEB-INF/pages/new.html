@@ -13,7 +13,7 @@
     <br/>
     <label for="power">Enter power: </label>
     <input type="text" th:field="*{power}" id="power"/>
-    <div style="color:red" th:if="${#fields.hasErrors('power')}" th:errors="*{age}">Age power</div>
+    <div style="color:red" th:if="${#fields.hasErrors('power')}" th:errors="*{power}">Power error</div>
     <br/>
     <label for="color">Enter color: </label>
     <input type="text" th:field="*{color}" id="color"/>

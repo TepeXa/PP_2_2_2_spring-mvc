@@ -7,6 +7,23 @@
 </head>
 <body>
 
+<table border="1">
+    <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Power</th>
+        <th>Color</th>
+    </tr>
+    <tr th:each="cars, state : ${cars}"
+        class="row" th:classappend="${state.odd} ? 'odd-row' : 'even-row'">
+        <td th:utext="${state.count}">No</td>
+        <td th:utext="${cars.getName()}">Name</td>
+        <td th:utext="${cars.getPower}">Power</td>
+        <td th:utext="${cars.getColor}">Color</td>
+    </tr>
+</table>
+
+
 <div th:each="cars:${cars}">
  <a th:href="@{/{id}(id=${cars.getId()})}"
 th:text="${cars.getName()+','+cars.getPower()+','+cars.getColor()}">car</a>
