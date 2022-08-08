@@ -7,7 +7,7 @@
 <body>
 
 <form th:method="PATCH" th:action="@{/{id}(id=${car.getId()})}" th:object="${car}">
-    <label for="name">Enter name: </label>
+    <label for="name">Enter name :  </label>
     <input type="text" th:field="*{name}" id="name"/>
     <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
     <br/>
@@ -15,10 +15,12 @@
     <input type="text" th:field="*{power}" id="power"/>
     <div style="color:red" th:if="${#fields.hasErrors('power')}" th:errors="*{power}">Power error</div>
     <br/>
-    <label for="color">Enter color: </label>
+    <label for="color">Enter color  :  </label>
     <input type="text" th:field="*{color}" id="color"/>
     <div style="color:red" th:if="${#fields.hasErrors('color')}" th:errors="*{color}">Color error</div>
     <br/>
+    <br/>
+    <hr/>
     <input type="submit" value="Update!"/>
 </form>
 

@@ -5,17 +5,22 @@
     <title>Car</title>
 </head>
 <body>
-<p>Name:</p>
-<p th:text="${car.getName()}">V1ALUE</p>
-<p>ID:</p>
-<p th:text="${car.getId()}">V1ALUE</p>
-<p>Power:</p>
-<p th:text="${car.getPower()}">V1ALUE</p>
-<p>Color:</p>
-<p th:text="${car.getColor()}">V1ALUE</p>
-
+<a>ID:</a>
+<a th:text="${car.getId()}">V1ALUE</a>
+<br/>
+<a>Name:</a>
+<a th:text="${car.getName()}">V1ALUE</a>
+<br/>
+<a>Power:</a>
+<a th:text="${car.getPower()}">V1ALUE</a>
+<br/>
+<a>Color:</a>
+<a th:text="${car.getColor()}">V1ALUE</a>
+<br/>
+<hr/>
 <a th:href="@{/{id}/edit(id=${car.getId()})}">Edit!</a>
-
+<br/>
+<hr/>
 <form th:method="DELETE" th:action="@{/{id}(id=${car.getId()})}">
     <input type ="submit" value="DELETE"/>
 </form>

@@ -19,6 +19,8 @@
     <input type="text" th:field="*{color}" id="color"/>
     <div style="color:red" th:if="${#fields.hasErrors('color')}" th:errors="*{color}">Color error</div>
     <br/>
+    <br/>
+    <hr/>
     <input type="submit" value="Create!"/>
 </form>
 
