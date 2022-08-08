@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import web.dao.carDAO;
 import web.models.Car;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @Controller
@@ -23,15 +24,21 @@ public class CarController {
 	@GetMapping()
 	public String index(Model model){
 		model.addAttribute("cars", carDAO.index());
-		//������� ���� ����� �� DAO � ��������� �� ����������� � �������������
 		return "index";
 	}
 
 	@GetMapping ("/{id}")
 	public String show(@PathVariable("id") int id, Model model) {
 		model.addAttribute("car", carDAO.show(id));
-		//������� ������ �������� �� ID �� DAO � ��������� �� ����������� � �������������
 		return "show";
+	}
+
+	@GetMapping ("/cars")
+	public String showall(HttpServletRequest request){
+		//model.addAttribute("cars", carDAO.index());
+		String count = request.getParameter("count");
+
+		return "index";
 	}
 
 	@GetMapping("/new")
