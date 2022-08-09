@@ -5,6 +5,8 @@ import web.models.Car;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class carDAO {
@@ -19,10 +21,12 @@ public class carDAO {
     }
 
     public List<Car> index(){
+
         return cars;
     }
 
     public Car show(int id) {
+
         return cars.stream().filter(car -> car.getId() == id).findAny().orElse(null);
     }
 
@@ -40,5 +44,12 @@ public class carDAO {
     }
     public void delete(int id) {
         cars.removeIf(p->p.getId()==id);
+    }
+
+    public Object showall(int count) {
+       if (count == 0) {
+            return cars;
+        }
+        return cars.stream().limit(count).collect(Collectors.toList());
     }
 }

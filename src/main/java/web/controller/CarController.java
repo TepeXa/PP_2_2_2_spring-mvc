@@ -1,5 +1,6 @@
 package web.controller;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,7 @@ import web.models.Car;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 //@RequestMapping("/")
@@ -34,10 +36,8 @@ public class CarController {
 	}
 
 	@GetMapping ("/cars")
-	public String showall(HttpServletRequest request){
-		//model.addAttribute("cars", carDAO.index());
-		String count = request.getParameter("count");
-
+	public String showall(@RequestParam(value = "count", required = false) Optional<Integer> count, Model model) {
+		model.addAttribute("cars", carDAO.showall(count.orElse(0)));
 		return "index";
 	}
 
