@@ -18,6 +18,7 @@ public class carDAO {
         cars.add(new Car(++CAR_COUNT,"Lada",77,"Baklazan"));
         cars.add(new Car(++CAR_COUNT,"Mers", 200, "white"));
         cars.add(new Car(++CAR_COUNT,"Scoda",180, "red"));
+        cars.add(new Car(++CAR_COUNT,"Lamba",999, "purple"));
     }
 
     public List<Car> index(){
